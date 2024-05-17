@@ -16,21 +16,16 @@ public class Main {
         // TODO: Implemente um loop 'for' para iterar sobre as transações:
         for (int i = 0; i < quantidadeTransacoes; i++) {
             String tipoTransacao = scanner.next();
-
+            double valorTransacao = scanner.nextDouble();
 
         // Aqui é verificar o tipo de transação e atualiza o saldo da conta de acordo:
             if (tipoTransacao.equals("D") || tipoTransacao.equals("d")) {
                 saldo += valorTransacao;
-                // TODO: Adicione a transação à lista:
-
-
-            } else if (tipoTransacao == "S" || tipoTransacao == "s") {
+                listaDeTransacoes.add("Deposito " + valorTransacao);
+            } else if (tipoTransacao.equals("S") || tipoTransacao.equals("s")) {
                 saldo -= valorTransacao;
-                // TODO: Adiciona a transação à lista
-
-
+                listaDeTransacoes.add("Saque " + valorTransacao);
             } else {
-                // Se o tipo de transação não for reconhecido, exibe uma mensagem de erro
                 System.out.println("Opção inválida. Utilize D para depósito ou S para saque.");
                 i--;
             }
@@ -41,7 +36,11 @@ public class Main {
         System.out.println("\nTransacoes:");
 
     // TODO: Crie um loop 'for' para exibir cada transação na lista:
-
+        for (int i = 0; i < listaDeTransacoes.size(); i++) {
+            String tp = listaDeTransacoes.get(i).split(" ")[0];
+            String vl = listaDeTransacoes.get(i).split(" ")[1];
+            System.out.println(i+1 + ". " + tp + " de " + vl);
+        }
     // TODO: Agora exibA o número da transação seguido da descrição da transação:
 
         scanner.close();
