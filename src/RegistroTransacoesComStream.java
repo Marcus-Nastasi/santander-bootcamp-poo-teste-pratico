@@ -12,10 +12,8 @@ public class RegistroTransacoesComStream {
         int quantidadeTransacoes = scanner.nextInt();
         List<Transacao> transacoes = new ArrayList<>();
 
-        for (int i = 1; i <= quantidadeTransacoes; i++) {
+        for (int i = 0; i < quantidadeTransacoes; i++) {
             char tipoTransacao = scanner.next().charAt(0);
-
-
             double valorTransacao = scanner.nextDouble();
 
             Transacao transacao = new Transacao(tipoTransacao, valorTransacao);
