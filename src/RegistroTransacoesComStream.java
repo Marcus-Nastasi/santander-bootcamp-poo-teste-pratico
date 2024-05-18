@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class RegistroTransacoesComStream {
 
@@ -18,7 +17,7 @@ public class RegistroTransacoesComStream {
 
             Transacao transacao = new Transacao(tipoTransacao, valorTransacao);
             transacoes.add(transacao);
-            // Aqui é atualizado o saldo da conta com base no tipo de transação
+
             if (transacao.getTipo() == 'D' || transacao.getTipo() == 'd') {
                 saldo += valorTransacao;
             } else if (transacao.getTipo() == 'S' || transacao.getTipo() == 's') {
@@ -26,18 +25,12 @@ public class RegistroTransacoesComStream {
             }
         }
 
-        // Exibe o saldo final e a lista de transações ao final do processo usando Stream API
         System.out.println("\nSaldo : " + saldo);
         System.out.println("\nTransacoes:");
-        // TODO: Crie um fluxo (stream) a partir da lista de transações:
 
-        // TODO: Mapeie cada transação para uma string formatada:
+        List<String> transFormated = transacoes.stream().map(Transacao::toString).toList();
 
-        // TODO: Colete os elementos do fluxo em uma lista:
-
-        // TODO: Para cada elemento da lista, imprime no console:
-
-
+        transFormated.forEach(System.out::println);
         scanner.close();
     }
 }
@@ -49,6 +42,11 @@ class Transacao {
     public Transacao(char tipo, double valor) {
         this.tipo = tipo;
         this.valor = valor;
+    }
+
+    @Override
+    public String toString() {
+        return(tipo + " de " + valor);
     }
 
     public char getTipo() {
