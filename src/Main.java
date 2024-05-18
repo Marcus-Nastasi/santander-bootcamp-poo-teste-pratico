@@ -33,7 +33,7 @@ public class Main {
         for (int i = 0; i < listaDeTransacoes.size(); i++) {
             String tp = listaDeTransacoes.get(i).split(" ")[0];
             String vl = listaDeTransacoes.get(i).split(" ")[1];
-            System.out.println(i+1 + ". " + tp + " de " + vl);
+            System.out.println(i + 1 + ". " + tp + " de " + vl);
         }
 
         scanner.close();
