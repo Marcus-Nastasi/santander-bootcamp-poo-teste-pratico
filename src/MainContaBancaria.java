@@ -33,12 +33,14 @@ public class MainContaBancaria {
 
 // TODO: Crie uma classe ContaBancaria:
 
-public class ContaBancaria {
+class ContaBancaria {
     // TODO: Crie uma variável para armazenar o saldo da conta
-
-
+    private double saldo;
     // TODO: Crie o construtor que inicializa a conta com um saldo inicial fornecido pelo usuário:
 
+    public ContaBancaria(double saldo) {
+        this.saldo = saldo;
+    }
 
     // Método para realizar depósito na conta:
     public void depositar(double valor) {
