@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 abstract class Cofre {
+
     protected String tipo;
     protected String metodoAbertura;
 
@@ -38,11 +39,11 @@ class CofreFisico extends Cofre {
 }
 
 class Desafio2 {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String tipoCofre = scanner.nextLine();
 
-        // TODO: Implemente a condição necessário para a verificação dos cofres seguros:
         if (tipoCofre.equalsIgnoreCase("digital")) {
             CofreDigital cd = new CofreDigital(scanner.nextInt());
             boolean validation = cd.validarSenha(scanner.nextInt());
