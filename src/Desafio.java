@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class Desafio {
 
     public static void main(String[] args) {
-        // Lendo os dados de Entrada:
         Scanner scanner = new Scanner(System.in);
         String titular = scanner.next();
         int numeroConta = scanner.nextInt();
@@ -41,14 +40,12 @@ class ContaPoupanca extends ContaBancaria2 {
     private double taxaJuros;
 
     public ContaPoupanca(int numero, String titular, double saldo, double taxaJuros) {
-        //TODO: Implementar adequadamente esta sobrecarga de construtores.
         super(numero, titular, saldo);
         this.taxaJuros = taxaJuros;
     }
 
     public void exibirInformacoes() {
         super.exibirInformacoes();
-        //TODO: Complementar as informações com a taxa de juros.
         System.out.println("Taxa de juros: " + this.taxaJuros + '%');
     }
 }
